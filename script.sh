@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Creating directories for raw, transformed, gold and json_and_CSV
+mkdir -p ./raw ./transformed ./gold ./json_and_CSV
+
 # Extracting the file
 
 # Here I saved the website url as variable to avoid repetitive use
@@ -56,3 +59,6 @@ if [ -f ./gold/2023_year_finance.csv ]; then
 else
   echo "Failed to load the file into Gold folder."
 fi
+
+# Moving the json and csv files into the json_and_CSV folder
+mv ../*.json ../*.csv ./json_and_CSV/
